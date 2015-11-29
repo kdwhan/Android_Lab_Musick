@@ -16,6 +16,8 @@ public class MainActivity extends AppCompatActivity {
     Button btStart;
     Button btStop;
     private MediaPlayer mMplayer;
+    private ListView lv_music;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
         btStart = (Button)findViewById(R.id.bt_start);
         btStop = (Button)findViewById(R.id.bt_stop);
-
+        lv_music = (ListView) findViewById(R.id.lv_music);
         mMplayer = new MediaPlayer();
 
         try {
@@ -53,5 +55,17 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+        // Create listview
+        final String[] musicList = {"Boys and Girls", "No Make Up", "Zeze"};
+        ArrayAdapter<String> musicAdapter;
+        musicAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, musicList);
+        lv_music.setAdapter(musicAdapter);
+        lv_music.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(getApplicationContext(), "click : "+ musicList[position], Toast.LENGTH_LONG).show();
+            }
+        });
     }
 }
