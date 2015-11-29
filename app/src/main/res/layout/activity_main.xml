@@ -9,11 +9,8 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="play"
+        android:text="Play"
         android:id="@+id/bt_start"
-        android:layout_marginLeft="39dp"
-        android:layout_marginStart="39dp"
-        android:layout_marginBottom="45dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
@@ -23,9 +20,25 @@
         android:layout_height="wrap_content"
         android:text="Stop"
         android:id="@+id/bt_stop"
-        android:layout_marginRight="39dp"
-        android:layout_marginEnd="39dp"
-        android:layout_alignTop="@+id/bt_start"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"  />
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lv_music"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/bt_start"
+        android:layout_toEndOf="@+id/bt_start" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MusicList"
+        android:id="@+id/textView"
+        android:layout_alignTop="@+id/lv_music"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="false"
+        android:textSize="20dp" />
 </RelativeLayout>
